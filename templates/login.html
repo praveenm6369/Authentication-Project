@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+</head>
+
+<body>
+    <center>
+    <h1>AI Research WorkSpace</h1><br>
+    {% if success %}
+    <div class="success-message">
+         {{ success }}
+    </div>
+    {% endif %}
+
+    
+    
+    <form action="/login" method="post">
+        <u><h2>Login</h3></u>
+        <input type="email" placeholder="Email" name="email" required><br><br>
+        
+        <input type="password" placeholder="Password" name="psw" required><br><br>
+        <center>
+            <button type="submit">Login</button>
+            <h4>Don't have an account? <a href="{{ url_for('signup') }}">  signup</a></h4>
+        </center>
+
+    </form>
+    </center>
+
+
+</body>
+</html>

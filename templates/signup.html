@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>signup</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/signup.css') }}">
+</head>
+<body>
+     <center>
+    <h1>AI Research WorkSpace</h1>
+    <u><h4>Register Your Account here!</h4></u>
+    
+    <form action="/register" method="post">
+        <u><h3>Register</h3></u>
+        <input type="text" placeholder="Name" name="name" required value="{{ name or ''}}"><br></br> 
+
+        <input type="email"  placeholder="Email" name="email" required value="{{ email or ''}}"><br><br>
+
+        <input type="password"  placeholder="Password" name="psw" required name="psw" value="{{ psw or '' }}"> {% if perror %}
+        <p class="p_error">{{perror}}</p>
+        {% endif %} <br><br>
+       
+        
+
+        <input type="password" placeholder="confirm Password" name="cpsw" name="cpsw" value="">     {% if con_error %}
+        <p class="p_error">{{con_error}}</p>
+        {% endif %}<br><br>
+
+        {% if error %}
+        <p class="error-message">{{error}}</p>
+        {% endif %}
+   
+        <center>
+            <button type="submit" ><a href=""></a> Signin</button>
+            
+        </center>
+
+
+
+    </form>
+    </center>
+
+   
+</body>
+</html>
